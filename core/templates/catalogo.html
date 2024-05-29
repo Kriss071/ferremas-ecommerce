@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Catalogo{% endblock %}
+
+{% block content %}
+
+{% if products %}
+    <div class="products-cont">
+        {% for p in products %}
+        <div class="product-card">
+            <img src="{% static 'img/no_img.jpg' %}" alt="">
+            <hr>
+            <h2>{{ p.name }}</h2>
+            <p class="price">{{ p.priceUSD }}</p>
+            <div class="product-buttons-cont">
+                <button>Comprar</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    {{ error }}
+{% endif %}
+
+
+
+{% endblock %}

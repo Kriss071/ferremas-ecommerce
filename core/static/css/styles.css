@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    background: #2952BE;
+    height: 64px;
+}
+
+nav ul {
+    width: 100%;
+    text-align: end;
+}
+
+nav li {
+    display: inline-block;
+    position: relative;
+}
+
+nav a {
+    display: block;
+    line-height: 64px;
+    padding: 0 14px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+nav li a:hover {
+    color: #375DC2;
+    background: #D1D1F2;
+}
+
+/* === Catalogo === */
+
+.main-catalogo-cont{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    gap: 20px;
+}
+
+.categories-cont{
+    width: 20%;
+    background-color: rgb(196, 196, 196);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.categories-cont ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.categories-cont li{
+    display: flex;
+}
+
+.categories-cont li a{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(69, 69, 69);
+}
+
+.categories-cont li a:hover{
+    color: black;
+}
+
+.selected {
+    color: black !important;
+}
+
+.products-cont{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    gap: 10px;
+    width: 80%;
+    padding: 15px;
+    margin: auto;
+    background-color: rgb(196, 196, 196);
+    justify-content: space-around;
+}
+
+.product-card{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 200px;
+    border: 1px solid;
+    padding: 10px;
+    background: white;
+}
+
+.product-card img{
+    width: 100%;
+}
+
+.product-card h2{
+    font-size: 20px;
+}
+
+.product-card p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-buttons-cont{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.product-buttons-cont button{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #EFEFEF;
+}
+
+.product-buttons-cont button:hover{
+    background-color: #a6a6a6;
+    color: white;
+}
+
+#cart-btn{
+    background-color: yellow;
+}
+
+#cart-btn:hover{
+    background-color: rgb(200, 200, 69);
+}

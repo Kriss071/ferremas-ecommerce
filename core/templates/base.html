@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="{% static 'img/logo.png' %}" alt="logo.png">
+            <ul>
+                <li><a href="{% url 'index' %}"">Inicio</a></li>
+                <li><a href="{% url 'catalogo' %}">Catalogo</a></li>
+                <li><a href='#'>Nosotros</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+    </footer>
+
+    <script src="{% static 'js/functions.js' %}"></script>
+
+</body>
+
+</html>
