@@ -50,12 +50,14 @@
             </tr>
         </tbody>
     </table>
+
+    
     
 {% else %}
     <p>El carrito está vacío.</p>
 {% endif %}
-
-<button><a href="{% url 'carrito:clear_cart' %}">Limpiar Carrito</a></button>
+<a href="{% url 'carrito:confirmar_compra' %}"><button>Confirmar Compra</button></a>
+<a href="{% url 'carrito:clear_cart' %}"><button>Limpiar Carrito</button></a>
 
 
 {% endblock %}

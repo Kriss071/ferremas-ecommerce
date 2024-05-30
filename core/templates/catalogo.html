@@ -13,7 +13,7 @@
             <h2>{{ p.name }}</h2>
             <p class="price">{{ p.priceUSD }}</p>
             <div class="product-buttons-cont">
-                <button><a href="{% url 'carrito:agregar_carrito' id_product=p.id %}">Comprar</a></button>
+                <a href="{% url 'carrito:agregar_carrito' id_product=p.id %}"><button>Comprar</button></a>
             </div>
         </div>
         {% endfor %}

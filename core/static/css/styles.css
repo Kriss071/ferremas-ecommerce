@@ -150,7 +150,7 @@ nav li a:hover {
     border-collapse: collapse;
 }
 
-.total{
+.total {
     width: 20%;
 }
 
@@ -198,4 +198,47 @@ nav li a:hover {
 
 .price {
     font-weight: bold;
+}
+
+/* Formulario */
+form{
+    width: 30%;
+    padding: 30px;
+    margin-left: 50px;
+    border-radius: 10px;
+    background-color: #a6a6a6;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo para el botón de enviar */
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }

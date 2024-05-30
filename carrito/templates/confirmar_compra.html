@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmar Compra{% endblock %}
+
+{% block content %}
+{{items_carrito}}
+    <h1>Confirmar Compra</h1>
+    <form method="post" action="{% url 'carrito:confirmar_compra' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.nombre.id_for_label }}">Nombre:</label>
+            {{ form.nombre }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.telefono.id_for_label }}">Teléfono:</label>
+            {{ form.telefono }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.calle.id_for_label }}">Calle:</label>
+            {{ form.calle }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.numero.id_for_label }}">Número:</label>
+            {{ form.numero }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.codigo_postal.id_for_label }}">Código Postal:</label>
+            {{ form.codigo_postal }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.comentario.id_for_label }}">Comentario:</label>
+            {{ form.comentario }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.correo.id_for_label }}">Correo Electrónico:</label>
+            {{ form.correo }}
+        </div>
+        <button type="submit" class="btn btn-primary">Confirmar Compra</button>
+    </form>
+{% endblock %}

@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 # Create your views here.
 
-API_PRODUCTS = 'https://ferremas-apirest.onrender.com/api/products/'
+API_PRODUCTS = 'http://127.0.0.1:8080/api/products/'
 
 def index(request):
     return render(request, 'index.html')
