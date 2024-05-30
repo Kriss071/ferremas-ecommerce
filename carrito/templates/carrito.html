@@ -34,7 +34,23 @@
             {% endfor %}
         </tbody>
     </table>
-    <p>Total: <span class="price">{{ total }}</span></p>
+    <table class="table total">
+        <thead>
+            <tr>
+                <th>Total</th>
+                <th>Iva</th>
+                <th>Neto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="price">{{ total }}</td>
+                <td class="price">{{ ivaTotal }}</td>
+                <td class="price">{{ neto }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
 {% else %}
     <p>El carrito está vacío.</p>
 {% endif %}

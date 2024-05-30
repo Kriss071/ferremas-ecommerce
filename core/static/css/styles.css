@@ -150,6 +150,10 @@ nav li a:hover {
     border-collapse: collapse;
 }
 
+.total{
+    width: 20%;
+}
+
 .table th,
 .table td {
     padding: 8px;

@@ -7,15 +7,8 @@ import requests
 
 app_name = 'carrito'
 
-def resumen_carrito(request):
-    cart = Carrito(request)
-    total = cart.total()
-            
-    context = {
-        'total': total
-    }
-            
-    return render(request, 'carrito.html', context)
+def resumen_carrito(request):   
+    return render(request, 'carrito.html')
 
 
 def agregar_carrito(request, id_product):
