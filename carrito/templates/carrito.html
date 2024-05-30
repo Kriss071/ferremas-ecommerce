@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Carrito{% endblock %}
+
+{% block content %}
+{{status}}
+
+{% if cart.cart %}
+<h1>Carrito de Compra</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th>Acciones</th> <!-- Agregamos una columna para los botones -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for item_id, item_info in cart.cart.items %}
+            <tr>
+                <td>{{ item_info.name }}</td>
+                <td>{{ item_info.priceUSD }}</td>
+                <td>{{ item_info.quantity }}</td>
+                <td>{{ item_info.total_price }} USD</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Acciones">
+                        <a href="{% url 'carrito:agregar_carrito' id_product=item_id %}" class="btn btn-primary">+</a>
+                        <a href="{% url 'carrito:eliminar_carrito' id_product=item_id %}" class="btn btn-danger">-</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Total: <span class="price">{{ total }}</span></p>
+{% else %}
+    <p>El carrito está vacío.</p>
+{% endif %}
+
+<button><a href="{% url 'carrito:clear_cart' %}">Limpiar Carrito</a></button>
+
+
+{% endblock %}

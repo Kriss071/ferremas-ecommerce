@@ -22,7 +22,3 @@ def catalogo(request):
         }
         
     return render(request, 'catalogo.html', context)
-
-
-def carrito(request):
-    return render(request, 'carrito.html')

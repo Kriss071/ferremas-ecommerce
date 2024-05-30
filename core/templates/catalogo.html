@@ -13,13 +13,13 @@
             <h2>{{ p.name }}</h2>
             <p class="price">{{ p.priceUSD }}</p>
             <div class="product-buttons-cont">
-                <button>Comprar</button>
+                <button><a href="{% url 'carrito:agregar_carrito' id_product=p.id %}">Comprar</a></button>
             </div>
         </div>
         {% endfor %}
     </div>
 {% else %}
-    {{ error }}
+{{ error }}
 {% endif %}
 
 

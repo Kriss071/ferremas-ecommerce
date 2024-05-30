@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -37,14 +37,14 @@ nav li a:hover {
 
 /* === Catalogo === */
 
-.main-catalogo-cont{
+.main-catalogo-cont {
     display: flex;
     width: 90%;
     margin: auto;
     gap: 20px;
 }
 
-.categories-cont{
+.categories-cont {
     width: 20%;
     background-color: rgb(196, 196, 196);
     border-radius: 10px;
@@ -52,18 +52,18 @@ nav li a:hover {
 }
 
 
-.categories-cont ul{
+.categories-cont ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
 }
 
-.categories-cont li{
+.categories-cont li {
     display: flex;
 }
 
-.categories-cont li a{
+.categories-cont li a {
     width: 100%;
     height: 100%;
     cursor: pointer;
@@ -72,7 +72,7 @@ nav li a:hover {
     color: rgb(69, 69, 69);
 }
 
-.categories-cont li a:hover{
+.categories-cont li a:hover {
     color: black;
 }
 
@@ -80,7 +80,7 @@ nav li a:hover {
     color: black !important;
 }
 
-.products-cont{
+.products-cont {
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
@@ -92,7 +92,7 @@ nav li a:hover {
     justify-content: space-around;
 }
 
-.product-card{
+.product-card {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -103,26 +103,26 @@ nav li a:hover {
     background: white;
 }
 
-.product-card img{
+.product-card img {
     width: 100%;
 }
 
-.product-card h2{
+.product-card h2 {
     font-size: 20px;
 }
 
-.product-card p{
+.product-card p {
     font-size: 20px;
     font-weight: bold;
 }
 
-.product-buttons-cont{
+.product-buttons-cont {
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
 
-.product-buttons-cont button{
+.product-buttons-cont button {
     cursor: pointer;
     width: 100%;
     border: none;
@@ -131,15 +131,67 @@ nav li a:hover {
     background-color: #EFEFEF;
 }
 
-.product-buttons-cont button:hover{
+.product-buttons-cont button:hover {
     background-color: #a6a6a6;
     color: white;
 }
 
-#cart-btn{
+#cart-btn {
     background-color: yellow;
 }
 
-#cart-btn:hover{
+#cart-btn:hover {
     background-color: rgb(200, 200, 69);
+}
+
+/* Tabla Carrito */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.btn-group {
+    display: flex;
+}
+
+.btn-group .btn {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #337ab7;
+    color: #fff;
+    border-color: #2e6da4;
+}
+
+.btn:hover {
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+.price {
+    font-weight: bold;
 }
