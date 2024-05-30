@@ -1,14 +1,16 @@
 class Carrito():
     def __init__(self, request):
         self.session = request.session
+        # Busca el carrito en la session
         cart = self.session.get('session_key')
         
+        # Si no lo encuentra, lo crea
         if not cart:
             cart = self.session['session_key'] = {}
             
         self.cart = cart
         
-        
+    # Agrega productos en el carrito
     def add(self, product, quantity=1):
         product_id = str(product['id'])
         
@@ -27,11 +29,13 @@ class Carrito():
             }
             
         self.session.modified = True
-        
+      
+    # Limpia el carrito
     def clear(self):
         self.session['session_key'] = {}
         self.session.modified = True
         
+    # Calcula el total    
     def total(self):
         total = sum(item_info['total_price'] for item_info in self.cart.values())
         return total

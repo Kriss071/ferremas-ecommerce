@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
-API_PRODUCTS = 'http://127.0.0.1:8080/api/products/'
+API_PRODUCTS = 'https://ferremas-apirest.onrender.com/api/products/'
 
 @csrf_exempt
 def index(request):
@@ -32,7 +32,7 @@ def catalogo(request):
     return render(request, 'catalogo.html', context)
 
 
-API_GET_PAYMENT = 'http://127.0.0.1:8080/api/get-payment/'
+API_GET_PAYMENT = 'https://ferremas-apirest.onrender.com/api/get-payment/'
 @csrf_exempt
 def retorno_flow(request):
     token = request.POST.get('token')    

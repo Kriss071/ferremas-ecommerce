@@ -10,9 +10,9 @@ from .forms import *
 
 app_name = 'carrito'
 
-API_PRODUCTS_FILTER_ID = 'http://127.0.0.1:8080/products/'
-API_PEDIDOS = 'http://127.0.0.1:8080/api/pedidos/'
-API_CREATE_PAYMENT = 'http://127.0.0.1:8080/api/create-payment/'
+API_PRODUCTS_FILTER_ID = 'https://ferremas-apirest.onrender.com/api/products/'
+API_PEDIDOS = 'https://ferremas-apirest.onrender.com/api/pedidos/'
+API_CREATE_PAYMENT = 'https://ferremas-apirest.onrender.com/api/create-payment/'
 
 def resumen_carrito(request):   
     return render(request, 'carrito.html')
