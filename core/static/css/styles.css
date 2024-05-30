@@ -201,7 +201,7 @@ nav li a:hover {
 }
 
 /* Formulario */
-form{
+form {
     width: 30%;
     padding: 30px;
     margin-left: 50px;
@@ -241,4 +241,31 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+/* RETORNO FLOW */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.success {
+    color: #009900;
+}
+
+.failure {
+    color: #ff0000;
+}
+
+.order-details p {
+    margin-bottom: 10px;
 }

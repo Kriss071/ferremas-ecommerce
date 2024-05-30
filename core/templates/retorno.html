@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Retorno Flow{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if status == 2 %}
+            <h1 class="success">¡Felicidades! Su compra se ha realizado con éxito.</h1>
+            <div class="order-details">
+                <p><strong>Pedido:</strong> {{commerceOrder}}</p>
+                <p><strong>Fecha:</strong> {{requestDate}}</p>
+                <p><strong>Asunto:</strong> {{subject}}</p>
+                <p><strong>Correo:</strong> {{payer}}</p>
+                <p><strong>Total:</strong> {{amount}} {{currency}}</p>
+                <p><strong>Medio de Pago:</strong> {{media}}</p>
+            </div>
+        {% else %}
+            <h1 class="failure">No hubo pago</h1>
+        {% endif %}
+    </div>
+{% endblock %}

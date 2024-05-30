@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+
+from carrito.context_processors import formatPrice
 from .carrito import Carrito
 import requests
 from .forms import *
@@ -23,6 +25,8 @@ def agregar_carrito(request, id_product):
         
     if response.status_code == 200:
         product = response.json()
+        print(product)
+        product = formatPrice(product)
             
         if product:
             cart.add(product)
@@ -62,27 +66,22 @@ def confirmar_compra(request):
             total = cart.total()
             data['valor_total'] = total
             
-            response = requests.post(API_PEDIDOS, json=data)
-            
-            if response.status_code == 201:
-                headers = {
-                    'Content-Type': 'application/json',
-                }
-                response = requests.post(API_CREATE_PAYMENT, json=data, headers=headers)
-                if response.status_code == 200:
-                    response.data = response.json()
-                    print('=== Response ===')
-                    print(response)
-                    print('=== ==== ===')
-                    print('=== Response.data ===')
-                    print(response.data)
-                    print('=== ==== ===')
-                    
-                    cart.clear() 
-                    return render(request, 'error.html', {'msg': 'CREO EL PEDIDO y entro a flow'})    
-                return render(request, 'error.html', {'msg': 'CREO EL PEDIDO pero no entro a flow'})
-            else: 
-                return render(request, 'error.html', {'msg': 'No creo el pedido'})
+            headers = {
+                'Content-Type': 'application/json',
+            }
+            response = requests.post(API_CREATE_PAYMENT, json=data, headers=headers)
+            if response.status_code == 200:
+                response.data = response.json()
+
+                url = response.data['url']
+                token = response.data['token']
+                payment_url = f"{url}?token={token}"
+
+                response = requests.post(API_PEDIDOS, json=data)
+        
+                cart.clear() 
+                return redirect(payment_url)
+            return render(request, 'error.html', {'msg': 'CREO EL PEDIDO pero no entro a flow'})
     else:
         form = ConfirmarCompraForm()
         

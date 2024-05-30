@@ -12,8 +12,8 @@ function formatPrices() {
     // Convertir el precio a un número
     price = parseFloat(price);
 
-    // Redondear el precio a 2 decimales
-    price = price.toFixed(2);
+    // Formatear el precio con separadores de miles y sin decimales
+    price = price.toLocaleString('es-CL', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
     // Agregar el símbolo de moneda y actualizar el contenido del elemento
     prices[i].innerText = '$' + price;

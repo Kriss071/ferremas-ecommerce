@@ -21,9 +21,9 @@
             {% for item_id, item_info in cart.cart.items %}
             <tr>
                 <td>{{ item_info.name }}</td>
-                <td>{{ item_info.priceUSD }}</td>
+                <td class="price">{{ item_info.priceUSD }}</td>
                 <td>{{ item_info.quantity }}</td>
-                <td>{{ item_info.total_price }} USD</td>
+                <td class="price">{{ item_info.total_price }} USD</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Acciones">
                         <a href="{% url 'carrito:agregar_carrito' id_product=item_id %}" class="btn btn-primary">+</a>
